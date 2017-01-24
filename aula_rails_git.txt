@@ -1,0 +1,76 @@
+Class:
+  Filme: titulo, ano_lancamento, Classificação, Atores, Diretores, resenha
+  Diretor - nome
+  Ator - nome
+  Usuário: nome, e-mail, senha
+  FilmesAssistidos - Usuário, data, Filme
+  Genero: descricao
+  Classificação: descricao, faixa_indicativa
+  
+  C:\Users\Leandro\Dropbox\projects\verao2017\aula2\code\my_movies>git pull --rebase origin master
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+  
+  
+  git init
+  git add .
+  git commit -m "<Mensagem>"
+  git status
+  #git remote add origin git@github.com:leandromcunha/my_movies.git --SSH
+  git remote rm origin -- Remove a origem
+  git remote add origin https://github.com/leandromcunha/my_movies.git
+  git remote -v
+  git pull --rebase origin master
+  git push --set-upstream origin master
+  
+  
+  rake db:create
+  
+  rails generate migration create_movies
+  Expected string default value for '--jbuilder'; got true (boolean)
+      invoke  active_record
+      create  db/migrate/20170124223412_create_movies.rb
+
+rails console
+starwars = Movie.create( title: "Star Wars", release_date: '25-04-1977')
+avatar = Movie.create( title:"Avatar" , release_date:'10-12-2009')
+
+
+starwars = Movie.create(title: "Star Wars", release_date: "25-04-1977")
+avatar = Movie.create!(title: "Avatar", release_date: "10-12-2009")
+requiem = Movie.new(title: "Requiem for a Dream")
+requiem.save!
+requiem.title
+requiem.release_date = "30-04-2012"
+requiem.save
+
+movies = Movie.where(title: "Avatar")
+new_movies = Movie.where("release_date > :cutoff", cutoff: '2010-10-10')
+old_movies = Movie.where("release_date < :cutoff", cutoff: '2010-10-10')
+specific_movie = Movie.find(2)
+specific_movie = Movie.find(-10) # => ActiveRecord::RecordNotFound
+movie_by_name = Movie.find_by_title("Star Wars")
+movie_by_name_date = Movie.find_by_title_and_release_date("Star Wars","25-04-1977")
+movie_by_name_date = Movie.where(title:"Star Wars").where( release_date:"25-04-1977")
+nil_movie = Movie.find_by_title("Nonexistent")
+all_movies = Movie.all
+all_limit=Movie.limit(30).offset(10)
+
+### UPDATE
+➢ movie = Movie.find 1
+➢ movie.update_attributes(description: 'A space western')
+➢ movie.release_date = "25-05-1977"
+➢
+➢ ### DELETE
+➢ movie.destroy
+➢ Movie.destroy_all
+
+# Criando a tabela professional
+rails generate model Professional name:string, birthdate:datetime, gender:string, country:string, type:string
+rake db:migrate
+
+
