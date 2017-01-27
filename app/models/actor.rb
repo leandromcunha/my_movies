@@ -1,2 +1,2 @@
-class Actor < ApplicationRecord
+class Actor < Professional
 end
