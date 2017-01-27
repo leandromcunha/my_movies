@@ -1,6 +1,8 @@
-<h1 class="title">Create a new movie</h1>
+<h1 class="title">
+  Edit movie <%= @movie.title %>
+</h1>
 
-<%= form_for @movie, url: {controller: 'movies', action: 'create'} do |f| %>
+<%= form_for @movie, method: "put", url: {controller: 'movies', action: 'update'} do |f| %>
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
