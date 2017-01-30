@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'movies'    => 'movies#create'
   get 'movies/:id/edit' => 'movies#edit'
   put 'movies/:id' => 'movies#update'
+  root 'movies#index'
 
 
 
