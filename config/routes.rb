@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'user/index' => 'user_movies#index'
+
+  devise_for :users
   resources :directors
   resources :actors
   get 'movies'=> 'movies#index'
@@ -9,6 +12,7 @@ Rails.application.routes.draw do
   put 'movies/:id' => 'movies#update'
   root 'movies#index'
 
+  post 'movie/:id/classifications' => "movies#create_classification"
 
 
   #get 'movies/show'

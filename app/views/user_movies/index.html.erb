@@ -1,0 +1,12 @@
+<h1>UserMovies#index</h1>
+
+<ul class="movies">
+  <%@classifications.each do |c| %>
+      <li>
+        <%= link_to( c.movie.title, "/movies/#{c.movie.movie_id}") %>
+        <b>
+          <%= c.score%>
+        </b>
+      </li>
+  <%end%>
+</ul>

@@ -35,6 +35,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'coffee-script-source', '~> 1.12.2'
 gem 'execjs'
+gem 'devise'
+#gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt-ruby', '3.1.5'
+#:require => 'bcrypt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
